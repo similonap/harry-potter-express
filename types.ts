@@ -7,7 +7,7 @@ export interface Spell {
     difficulty: string;
     effectDuration: string;
     isUnforgivable: boolean;
-    range: string;
+    spellRange: string;
     counterSpell: string;
     alignment: string;
 }

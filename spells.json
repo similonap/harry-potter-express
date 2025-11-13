@@ -8,7 +8,7 @@
     "difficulty": "Beginner",
     "effectDuration": "Instant",
     "isUnforgivable": false,
-    "range": "10 meters",
+    "spellRange": "10 meters",
     "counterSpell": "Protego",
     "alignment": "Good"
   },
@@ -21,7 +21,7 @@
     "difficulty": "Advanced",
     "effectDuration": "Permanent",
     "isUnforgivable": true,
-    "range": "Line of sight",
+    "spellRange": "Line of sight",
     "counterSpell": "None",
     "alignment": "Dark"
   },
@@ -34,7 +34,7 @@
     "difficulty": "Beginner",
     "effectDuration": "5 seconds",
     "isUnforgivable": false,
-    "range": "5 meters",
+    "spellRange": "5 meters",
     "counterSpell": "Finite Incantatem",
     "alignment": "Neutral"
   },
@@ -47,7 +47,7 @@
     "difficulty": "Advanced",
     "effectDuration": "Until healed",
     "isUnforgivable": false,
-    "range": "15 meters",
+    "spellRange": "15 meters",
     "counterSpell": "Episkey",
     "alignment": "Dark"
   },
@@ -60,7 +60,7 @@
     "difficulty": "Intermediate",
     "effectDuration": "Until dismissed",
     "isUnforgivable": false,
-    "range": "Touch",
+    "spellRange": "Touch",
     "counterSpell": "None",
     "alignment": "Neutral"
   },
@@ -73,7 +73,7 @@
     "difficulty": "Beginner",
     "effectDuration": "Instant",
     "isUnforgivable": false,
-    "range": "Touch",
+    "spellRange": "Touch",
     "counterSpell": "None",
     "alignment": "Good"
   },
@@ -86,7 +86,7 @@
     "difficulty": "Intermediate",
     "effectDuration": "Until object arrives",
     "isUnforgivable": false,
-    "range": "Unlimited (line of sight or named object)",
+    "spellRange": "Unlimited (line of sight or named object)",
     "counterSpell": "Protego",
     "alignment": "Neutral"
   },
@@ -99,7 +99,7 @@
     "difficulty": "Beginner",
     "effectDuration": "Until deactivated",
     "isUnforgivable": false,
-    "range": "Self",
+    "spellRange": "Self",
     "counterSpell": "Nox",
     "alignment": "Good"
   },
@@ -112,7 +112,7 @@
     "difficulty": "Advanced",
     "effectDuration": "While maintained",
     "isUnforgivable": true,
-    "range": "15 meters",
+    "spellRange": "15 meters",
     "counterSpell": "Protego",
     "alignment": "Dark"
   },
@@ -125,7 +125,7 @@
     "difficulty": "Intermediate",
     "effectDuration": "1 minute",
     "isUnforgivable": false,
-    "range": "10 meters",
+    "spellRange": "10 meters",
     "counterSpell": "Finite Incantatem",
     "alignment": "Neutral"
   }

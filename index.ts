@@ -2,7 +2,7 @@ import express, { Express } from "express";
 import dotenv from "dotenv";
 import path from "path";
 import { Spell } from "./types";
-import { getSpells } from "./database";
+import { connect, getSpells } from "./database";
 import { spellsRouter } from "./routers/spellsRouter";
 
 dotenv.config();
@@ -19,6 +19,7 @@ app.set("port", process.env.PORT ?? 3000);
 
 app.use("/spells", spellsRouter());
 
-app.listen(app.get("port"), () => {
+app.listen(app.get("port"), async() => {
     console.log("Server started on http://localhost:" + app.get("port"));
+    await connect();
 });

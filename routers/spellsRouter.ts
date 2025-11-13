@@ -5,18 +5,18 @@ import { getSpells, deleteSpell, getSpellById, createSpell, updateSpell } from "
 export function spellsRouter() {
     const router = Router();
 
-    router.get("/", (req, res) => {
+    router.get("/", async (req, res) => {
         const q : string = typeof req.query.q === "string" ? req.query.q : "";
 
-        const spells: Spell[] = getSpells(q.toLowerCase());
+        const spells: Spell[] = await getSpells(q.toLowerCase());
 
         res.json(spells);
     });
 
-    router.get("/:id", (req, res) => {
+    router.get("/:id", async (req, res) => {
         const id: number = parseInt(req.params.id);
 
-        const spell: Spell | undefined = getSpellById(id);
+        const spell: Spell | undefined = await getSpellById(id);
 
         if (spell) {
             res.json(spell);
@@ -25,30 +25,39 @@ export function spellsRouter() {
         }
     });
 
-    router.post("/", (req, res) => {
+    router.post("/", async(req, res) => {
         const newSpell : Spell = req.body;
 
-        let createdSpell: Spell = createSpell(newSpell);
+        let createdSpell: Spell | undefined = await createSpell(newSpell);
+
+        if (!createdSpell) {
+            res.status(500).send({error: "Failed to create spell"});
+            return;
+        }
 
         res.status(201).json(createdSpell);
     });
 
 
-    router.delete("/:id", (req,res) => {
+    router.delete("/:id", async (req,res) => {
         const id : number = parseInt(req.params.id);
 
-        deleteSpell(id);
+        await deleteSpell(id);
 
         res.status(204).json({});
     });
 
-    router.patch("/:id", (req, res) => {
+    router.patch("/:id", async(req, res) => {
         const id: number = parseInt(req.params.id);
         const spellPatch: Spell = req.body;
 
-        updateSpell(id, spellPatch);
+        let updatedSpell : Spell | undefined = await updateSpell(id, spellPatch);
+        if (!updatedSpell) {
+            res.status(404).send({error: "Spell not found"});
+            return;
+        }
 
-        res.status(200).json(getSpellById(id));
+        res.status(200).json(updatedSpell);
     });
 
 
